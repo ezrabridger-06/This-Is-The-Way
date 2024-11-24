@@ -36,8 +36,12 @@ const audioCheckbox = document.getElementById('audio-played');
 const startStopButton = document.querySelector('.play-pause-button');
 const platter = document.querySelector('.platter');
 const tonearm = document.querySelector('.tonearm');
-const openingBox = document.querySelector('.opening-box');
 const msgBox = document.querySelector('.intro-box')
+
+// Display platter after rendered
+platter.onload = function() {
+    displayObject(platter);
+}
 
 // Run play/pause button on click
 startStopButton.addEventListener('click', () => {
@@ -53,12 +57,8 @@ startStopButton.addEventListener('click', () => {
         firstAudio.play();
     }, 2000);
 
-    // Show contents after brief delay if not done so
-    if (openingBox.style.display == 'none') {
-        setTimeout(() => {
-            displayObject(openingBox);
-        }, 4000);
-
+    // Show contents after 10s if not done so
+    if (msgBox.style.display == 'none') {
         setTimeout(() => {
             displayObject(msgBox);
         }, 10000);
