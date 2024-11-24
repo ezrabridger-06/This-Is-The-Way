@@ -4,3 +4,115 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
+.background {
+    background-color: lightgray;
+}
+
+.next-page{
+    position: fixed;
+    width: 75px;
+    height: 150px;
+    top: 50%;
+    right: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+}
+.next-page p {
+    margin: 0;
+    text-align: center;
+    font-size: 75px;
+}
+
+.prev-page {
+    position: fixed;
+    width: 75px;
+    height: 150px;
+    top: 50%;
+    left: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+}
+.prev-page p {
+    margin: 0;
+    text-align: center;
+    font-size: 75px;
+}
+
+.next-page a,
+.prev-page a {
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+}
+.next-page a:hover,
+.prev-page a:hover {
+    color: lightcoral;
+    transform: scale(1.5);
+}
+
+.turntable-container {
+    position: relative;
+}
+.turntable-base {
+    width: 600px;
+    height: 500px;
+    background: linear-gradient(to right, #e4a0b7, #ecbdc4);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transform: translateX(40%) translateY(40%);
+    position: absolute;
+}
+.turntable-base .platter {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-60%, -50%);
+    animation: spin 15s linear infinite;
+}
+.turntable-base .tonearm {
+    position: absolute;
+    left: 70%;
+    top: 0;
+    transform: translateY(-15%) scale(0.8);
+    z-index: 1;
+    animation: rotateArm 2s linear forwards;
+}
+.play-pause-button {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2e6f40;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+@keyframes spin {
+    from {
+        transform: translate(-60%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-60%, -50%) rotate(360deg);
+    }
+}
+@keyframes rotateArm {
+    from {
+        transform: translateY(-15%) scale(0.8);
+    }
+    to {
+        transform: translate(-20%, -15%) scale(0.8) rotate(20deg);
+    }
+}
