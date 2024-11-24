@@ -18,6 +18,16 @@ function stopButtonFormat() {
     startStopButton.style.backgroundColor = '#ff4040';
 }
 
+// Display hidden object
+function displayObject(obj) {
+    obj.style.removeProperty('display');
+}
+
+// Hide object
+function hideObject(obj) {
+    obj.style.display = 'none';
+}
+
 // Operations
 // Fetch elements and DOM
 const firstAudio = document.getElementById('opening');
@@ -26,6 +36,8 @@ const audioCheckbox = document.getElementById('audio-played');
 const startStopButton = document.querySelector('.play-pause-button');
 const platter = document.querySelector('.platter');
 const tonearm = document.querySelector('.tonearm');
+const openingBox = document.querySelector('.opening-box');
+const msgBox = document.querySelector('.intro-box')
 
 // Run play/pause button on click
 startStopButton.addEventListener('click', () => {
@@ -40,11 +52,22 @@ startStopButton.addEventListener('click', () => {
         platter.style.animationPlayState = 'running';
         firstAudio.play();
     }, 2000);
+
+    // Show contents after brief delay if not done so
+    if (openingBox.style.display == 'none') {
+        setTimeout(() => {
+            displayObject(openingBox);
+        }, 4000);
+
+        setTimeout(() => {
+            displayObject(msgBox);
+        }, 10000);
+    }
   } 
   else {
-    // Change button
     firstAudio.pause();
-
+      
+    // Change button
     startButtonFormat();
     reverseAnimation();
   }
@@ -52,9 +75,12 @@ startStopButton.addEventListener('click', () => {
 
 // Audio end actions
 firstAudio.addEventListener('ended', () => {
-    // Next page option
-    nextPage.style.removeProperty('display');
+    // Next page option if not skipped
+    if (nextPage.style.display == 'none'){
+        displayObject(nextPage);
+    }
     
+    // Change button
     startButtonFormat();
     reverseAnimation();
 });
@@ -62,9 +88,9 @@ firstAudio.addEventListener('ended', () => {
 // Audio skip actions
 audioCheckbox.addEventListener('change', () => {
     if (audioCheckbox.checked) {
-        nextPage.style.removeProperty('display');
+        displayObject(nextPage);
     } 
     else {
-        nextPage.style.display = 'none';
+        hideObject(nextPage);
     }
 });
