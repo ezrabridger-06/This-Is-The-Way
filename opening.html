@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/image/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/image/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/image/icons/favicon-16x16.png">
-    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="manifest" href="/image/icons/site.webmanifest">
 
     <title>Welcome!</title>
     <!-- Google Font-->
@@ -16,7 +16,7 @@
   </head>
 
   <body class="background">
-    <div class="next-page">
+    <div class="next-page" style="display: none;">
       <a href="thoughts.html">
         <p>&#187;</p>
       </a>
@@ -26,8 +26,11 @@
         <div class="platter"></div>
         <img src="/image/tonearm.png" alt="Tonearm" class="tonearm">
         <button class="play-pause-button">START</button>
+        <input type="checkbox" id="audio-played">
+        <label for="audio-played">Skip Audio</label>
       </div>
     </div>
     <audio id="audio-player" src="/audio/motivating-intention.mp3" type="audio/mpeg"></audio>
+    <script src="script.js"></script>
   </body>
 </html>
