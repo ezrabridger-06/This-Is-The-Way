@@ -9,28 +9,34 @@
     <link rel="manifest" href="./image/icons/site.webmanifest">
 
     <title>Welcome!</title>
-    <!-- Google Font-->
+    <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="background">
+    <!-- Page change -->
     <div class="next-page" style="display: none;">
       <a href="./thoughts.html">
         <p>&#187;</p>
       </a>
     </div>
-    <div class="turntable-container">
-      <div class="turntable-base">
-        <div class="platter"></div>
-        <img src="./image/tonearm.png" alt="Tonearm" class="tonearm">
-        <button class="play-pause-button">START</button>
-        <input type="checkbox" id="audio-played">
-        <label for="audio-played">Skip Audio</label>
+    
+    <!-- Turntable -->
+    <div class="turntable">
+      <div class="platter">
+        <audio id="opening" src="./audio/opening-song.mp3" type="audio/mpeg"></audio>
       </div>
+      <img src="./image/tonearm.png" alt="Tonearm" class="tonearm">
+      <input type="checkbox" id="audio-played">
+      <label for="audio-played">Skip Audio</label>
+      <button class="play-pause-button">START</button>
+      <img src="./image/flowers-pack.png" alt="Flowers" id="flowers-pack">
+      <img src="./image/flowers-ring.png" alt="Flowers" id="flowers-ring">
     </div>
-    <audio id="audio-player" src="./audio/motivating-intention.mp3" type="audio/mpeg"></audio>
-    <script src="script.js"></script>
+
+    <!-- JS -->
+    <script src="turntable.js"></script>
   </body>
 </html>

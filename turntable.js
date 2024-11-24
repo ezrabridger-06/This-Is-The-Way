@@ -1,48 +1,49 @@
-// FUNCTIONS
-// Animations pause/reverse
+// TURNTABLE
+// Functions
+// Pause/reverse animations
 function reverseAnimation() {
     platter.style.animationPlayState = 'paused';
     tonearm.style.animation = 'rotateArmReverse 2s linear forwards';
 }
 
-// Start button formatting
+// Format start button
 function startButtonFormat() {
     startStopButton.textContent = 'START';
     startStopButton.style.backgroundColor = '#2e6f40';
 }
 
-// Stop button formatting
+// Format stop button
 function stopButtonFormat() {
     startStopButton.textContent = 'STOP';
     startStopButton.style.backgroundColor = '#ff4040';
 }
 
-// MAIN PROGRAM
-// Elements and DOM fetching
-const audio = document.getElementById('audio-player');
+// Operations
+// Fetch elements and DOM
+const firstAudio = document.getElementById('opening');
+const nextPage = document.querySelector('.next-page');
 const audioCheckbox = document.getElementById('audio-played');
 const startStopButton = document.querySelector('.play-pause-button');
 const platter = document.querySelector('.platter');
 const tonearm = document.querySelector('.tonearm');
-const nextPage = document.querySelector('.next-page');
 
-// On-click play and pause button actions
+// Run play/pause button on click
 startStopButton.addEventListener('click', () => {
-  if (audio.paused) {
-    // Tonearm movement
+  if (firstAudio.paused) {
+    // Move tonearm and change button
     tonearm.style.animation = 'rotateArm 2s linear forwards';
     tonearm.style.animationPlayState = 'running';
-
-    // Audio play and platter movement after 2s
+    stopButtonFormat();
+    
+    // Play audio and rotate platter after 2s
     setTimeout(() => {
         platter.style.animationPlayState = 'running';
-        audio.play();
-        stopButtonFormat();
+        firstAudio.play();
     }, 2000);
-
-  } else {
-    // Button reset
-    audio.pause();
+  } 
+  else {
+    // Change button
+    firstAudio.pause();
 
     startButtonFormat();
     reverseAnimation();
@@ -50,19 +51,20 @@ startStopButton.addEventListener('click', () => {
 });
 
 // Audio end actions
-audio.addEventListener('ended', () => {
+firstAudio.addEventListener('ended', () => {
     // Next page option
     nextPage.style.removeProperty('display');
     
     startButtonFormat();
-    reverseAnimation()
+    reverseAnimation();
 });
 
 // Audio skip actions
 audioCheckbox.addEventListener('change', () => {
     if (audioCheckbox.checked) {
         nextPage.style.removeProperty('display');
-    } else {
+    } 
+    else {
         nextPage.style.display = 'none';
     }
 });

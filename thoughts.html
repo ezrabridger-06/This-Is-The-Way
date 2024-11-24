@@ -3,28 +3,79 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png">
-    <link rel="manifest" href="./icons/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./image/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./image/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./image/icons/favicon-16x16.png">
+    <link rel="manifest" href="./image/icons/site.webmanifest">
 
     <title>Us, Together?</title>
-    <!-- Google Font-->
+    <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" />
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body class="background">
-    <div class="next-page">
+    <!-- Page change -->
+    <div class="next-page" style="display: none;">
       <a href="./proposal.html">
         <p>&#187;</p>
       </a>
     </div>
     <div class="prev-page">
-      <a href="./opening.html">
+      <a href="./index.html">
         <p>&#171;</p>
       </a>
     </div>
+
+    <!-- Timeline -->
+    <div class="timeline">
+      <div class="title">
+        <h1>SUY NGHĨ CỦA ANH TỪ NGÀY MÌNH QUEN NHAU</h1>
+        <p>(Hãy ấn vào tiêu đề phía trên để hiện nội dung)</p>
+        <audio id="timeline" src="./audio/timeline-song.mp3" type="audio/mpeg"></audio>
+      </div>
+      <div class="line" style="display: none;">
+        <p>(Hãy ấn vào dấu mốc phía duới để hiện nội dung)</p>
+        <div class="first-button-outside">
+          <div class="first-button-inside"></div>
+          <div class="first-text-line" style="display: none;">
+            <div class="first-text-box">
+              <h1>Test</h1>
+              <h6>Test</h6>
+            </div>
+          </div>
+        </div>
+        <div class="second-button-outside" style="display: none;">
+          <div class="second-button-inside"></div>
+          <div class="second-text-line" style="display: none;">
+            <div class="second-text-box">
+              <h1>Test</h1>
+              <h6>Test</h6>
+            </div>
+          </div>
+        </div>
+        <div class="third-button-outside" style="display: none;">
+          <div class="third-button-inside"></div>
+          <div class="third-text-line" style="display: none;">
+            <div class="third-text-box">
+              <h1>Test</h1>
+              <h6>Test</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dashed-line" style="display: none;">
+        <div class="final-text-line" style="display: none;">
+          <div class="final-text-box">
+            <h1>Test</h1>
+            <h6>Test</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="timeline.js"></script>
   </body>
 </html>
