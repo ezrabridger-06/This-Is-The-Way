@@ -38,11 +38,6 @@ const platter = document.querySelector('.platter');
 const tonearm = document.querySelector('.tonearm');
 const msgBox = document.querySelector('.intro-box')
 
-// Display platter after rendered
-platter.onload = function() {
-    displayObject(platter);
-}
-
 // Run play/pause button on click
 startStopButton.addEventListener('click', () => {
   if (firstAudio.paused) {
