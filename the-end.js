@@ -33,14 +33,16 @@ titleObj.addEventListener('click', () => {
                 displayObject(myImage);
                 hideObject(titleNote);
             }, 3000);
-
-            setTimeout(() => {
-                titleHeader.textContent = '...QUYẾT ĐỊNH CỦA EM';
-                displayObject(endBox);
-            }, 60000);
         }
     }
     else {
         thirdAudio.pause();
     }
+});
+
+msgBox.addEventListener('click', () => {
+    setTimeout(() => {
+        titleHeader.textContent = '...QUYẾT ĐỊNH CỦA EM';
+        displayObject(endBox);
+    }, 5000);
 });
