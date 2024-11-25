@@ -32,11 +32,11 @@ function hideObject(obj) {
 // Fetch elements and DOM
 const firstAudio = document.getElementById('opening');
 const nextPage = document.querySelector('.next-page');
-const audioCheckbox = document.getElementById('audio-played');
 const startStopButton = document.querySelector('.play-pause-button');
 const platter = document.querySelector('.platter');
 const tonearm = document.querySelector('.tonearm');
 const msgBox = document.querySelector('.intro-box')
+// const audioCheckbox = document.getElementById('audio-played');
 
 // Run play/pause button on click
 startStopButton.addEventListener('click', () => {
@@ -56,7 +56,11 @@ startStopButton.addEventListener('click', () => {
     if (msgBox.style.display == 'none') {
         setTimeout(() => {
             displayObject(msgBox);
-        }, 10000);
+        }, 7000);
+
+        setTimeout(() => {
+            displayObject(nextPage);
+        }, 30000);
     }
   } 
   else {
@@ -81,11 +85,11 @@ firstAudio.addEventListener('ended', () => {
 });
 
 // Audio skip actions
-audioCheckbox.addEventListener('change', () => {
-    if (audioCheckbox.checked) {
-        displayObject(nextPage);
-    } 
-    else {
-        hideObject(nextPage);
-    }
-});
+// audioCheckbox.addEventListener('change', () => {
+//     if (audioCheckbox.checked) {
+//         displayObject(nextPage);
+//     } 
+//     else {
+//         hideObject(nextPage);
+//     }
+// });

@@ -195,6 +195,7 @@
         transform: translateY(-15%) scale(0.8) rotate(0deg);
     }
 }
+/*
 #audio-played {
     position: absolute;
     display: inline-block;
@@ -210,6 +211,7 @@
     right: 3%;
     bottom: -5%;
 }
+*/
 
 /* Timeline and proposal pages base layout*/
 .tl-propos-layout {
